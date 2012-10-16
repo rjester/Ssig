@@ -11,7 +11,7 @@ namespace Ssig.Models
     public DbSet<Meeting> Meetings { get; set; }
     public DbSet<Speaker> Speakers { get; set; }
 
-    public SsigContext()
+    public SsigContext() : base("name=DefaultConnection")
     {
       Configuration.ProxyCreationEnabled = false;
     }
