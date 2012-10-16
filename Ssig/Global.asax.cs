@@ -25,7 +25,7 @@ namespace Ssig
       RouteConfig.RegisterRoutes(RouteTable.Routes);
       BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-      Database.SetInitializer(new SsigContextInitializer());
+      //Database.SetInitializer(new SsigContextInitializer());
       GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 
       var config = GlobalConfiguration.Configuration;
