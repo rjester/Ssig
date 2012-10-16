@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 
 namespace Ssig.Models {
-  public class SsigContextInitializer : DropCreateDatabaseIfModelChanges<SsigContext> {
+  public class SsigContextInitializer : DropCreateDatabaseAlways<SsigContext> { //DropCreateDatabaseIfModelChanges<SsigContext> {
     protected override void Seed(SsigContext context) {
       context.Meetings.Add(
         new Meeting {
