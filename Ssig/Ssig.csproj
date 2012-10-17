@@ -168,6 +168,7 @@
     <Compile Include="Controllers\AdminMeetingController.cs" />
     <Compile Include="Controllers\api\ArchivedMeetingsController.cs" />
     <Compile Include="Controllers\api\MeetingsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\api\MeetingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />

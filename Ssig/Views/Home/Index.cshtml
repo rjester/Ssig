@@ -10,11 +10,12 @@
 <div id="body">
     <section class="featured">
         <div class="content-wrapper">
-            @*<hgroup class="title">*@
-                <h1>@Model.NextMeeting.Title</h1>
+          @if (Model.NextMeeting != null) {
+           <h1>@Model.NextMeeting.Title</h1>
                 <h2>@Model.NextMeeting.MeetingDate.ToString("F")</h2>
-            @*</hgroup>*@
-          <p>@Model.NextMeeting.Description</p>
+          <p>@Model.NextMeeting.Description</p> 
+          }     
+           
 
         </div>
     </section>
