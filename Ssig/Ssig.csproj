@@ -173,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminMeetingController.cs" />
+    <Compile Include="Controllers\AdminSpeakerController.cs" />
     <Compile Include="Controllers\api\ArchivedMeetingsController.cs" />
     <Compile Include="Controllers\api\MeetingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
