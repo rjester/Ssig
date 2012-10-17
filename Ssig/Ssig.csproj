@@ -181,10 +181,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Abstract\ISpeakerRepository.cs" />
     <Compile Include="Models\Abstract\IMeetingRepository.cs" />
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\Meeting.cs" />
+    <Compile Include="Models\Repositories\SpeakerRepository.cs" />
     <Compile Include="Models\Repositories\MeetingRepository.cs" />
     <Compile Include="Models\Speaker.cs" />
     <Compile Include="Models\SsigContext.cs" />
