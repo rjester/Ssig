@@ -20,11 +20,11 @@ namespace Ssig.Models.Repositories
     }
 
     public Meeting GetNextMeeting() {
-      return _db.Meetings.OrderByDescending(m => m.MeetingDate).FirstOrDefault();
+      return _db.Meetings.Include("Speakers").OrderByDescending(m => m.MeetingDate).FirstOrDefault();
     }
 
     public IEnumerable<Meeting> GetArchivedMeetings(int page, int size) {
-      return _db.Meetings.OrderByDescending(m => m.MeetingDate).Skip(1).Skip((page - 1) * size).Take(size);
+      return _db.Meetings.Include("Speakers").OrderByDescending(m => m.MeetingDate).Skip(1).Skip((page - 1) * size).Take(size);
     }
 
     public IEnumerable<Meeting> GetAllArchivedMeetings() {

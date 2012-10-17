@@ -10,6 +10,7 @@ namespace Ssig.Models {
     public string LastName { get; set; }
     public string Email { get; set; }
     public string Twitter { get; set; }
+    public IList<Meeting> Meetings { get; set; }
 
     public string FullName {
       get {

@@ -1,38 +1,45 @@
 ﻿@model Ssig.Models.HomeViewModel
 <header>
-    <div class="content-wrapper">
-        <div class="float-left">
-            <p class="site-title">
-                <a href="~/">ASP.NET Web API</a></p>
-        </div>
+  <div class="content-wrapper">
+    <div class="float-left">
+      <p class="site-title">
+        <a href="~/">ASP.NET Web API</a>
+      </p>
     </div>
+  </div>
 </header>
 <div id="body">
-    <section class="featured">
-        <div class="content-wrapper">
-          @if (Model.NextMeeting != null) {
-           <h1>@Model.NextMeeting.Title</h1>
-                <h2>@Model.NextMeeting.MeetingDate.ToString("F")</h2>
-          <p>@Model.NextMeeting.Description</p> 
-          }     
-           
-
-        </div>
-    </section>
-    <section class="content-wrapper main-content clear-fix">
-      @foreach (var item in Model.ArchivedMeetings) {
-        <h3>@item.Title</h3>
-                <h4>@item.MeetingDate.ToString("F")</h4>
-          <p>@item.Description</p>
-      }  
-      
-      @if (Model.CurrentPage > 1) {
-        @Html.ActionLink("Previous", "Index", new { page = Model.CurrentPage - 1})  
-      }
-      
-      @if (Model.CurrentPage < Model.TotalPages) {
-        @Html.ActionLink("Next", "Index", new { page = Model.CurrentPage + 1})
+  <section class="featured">
+    <div class="content-wrapper">
+      @if (Model.NextMeeting != null) {
+        <h1>@Model.NextMeeting.Title</h1>
+        <h2>@Model.NextMeeting.MeetingDate.ToString("F")</h2>
+        foreach (var spkr in Model.NextMeeting.Speakers) {
+        <h3>@spkr.FullName</h3>
+        }
+        <p>@Model.NextMeeting.Description</p> 
       }
 
-    </section>
+
+    </div>
+  </section>
+  <section class="content-wrapper main-content clear-fix">
+    @foreach (var item in Model.ArchivedMeetings) {
+      <h3>@item.Title</h3>
+      <h4>@item.MeetingDate.ToString("F")</h4>
+      foreach (var spkr in item.Speakers) {
+        <h5>@spkr.FullName</h5>
+        }
+      <p>@item.Description</p>
+    }
+
+    @if (Model.CurrentPage > 1) {
+      @Html.ActionLink("Previous", "Index", new { page = Model.CurrentPage - 1 })  
+    }
+
+    @if (Model.CurrentPage < Model.TotalPages) {
+      @Html.ActionLink("Next", "Index", new { page = Model.CurrentPage + 1 })
+    }
+
+  </section>
 </div>
