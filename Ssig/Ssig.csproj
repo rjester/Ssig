@@ -310,6 +310,8 @@
     <Content Include="Views\AdminMeeting\Details.cshtml" />
     <Content Include="Views\AdminMeeting\Create.cshtml" />
     <Content Include="Views\AdminMeeting\Edit.cshtml" />
+    <Content Include="Views\AdminSpeaker\Index.cshtml" />
+    <Content Include="Views\AdminSpeaker\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
