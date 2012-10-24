@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Ssig.Filters;
 using Ssig.Models;
 using Ssig.Models.Repositories;
 
@@ -35,12 +36,14 @@ namespace Ssig.Controllers.Api
         
         
         // POST api/meeting
+    [ModelState]
         public HttpResponseMessage Post(Meeting meeting) {
           var response = Request.CreateResponse(HttpStatusCode.MethodNotAllowed);
           return response;
         }
 
         // PUT api/meeting/5
+    [ModelState]
         public HttpResponseMessage Put(int id, [FromBody]string value)
         {
           var response = Request.CreateResponse(HttpStatusCode.MethodNotAllowed);
