@@ -32,6 +32,7 @@ namespace Ssig.Controllers.api {
 
     // POST api/meetings
     [ModelState]
+    [CheckModelForNull]
     public HttpResponseMessage Post([FromBody]string value) {
       var response = Request.CreateResponse(HttpStatusCode.MethodNotAllowed);
       return response;
@@ -39,6 +40,7 @@ namespace Ssig.Controllers.api {
 
     // PUT api/meetings/5
     [ModelState]
+    [CheckModelForNull]
     public HttpResponseMessage Put(int id, [FromBody]string value) {
       var response = Request.CreateResponse(HttpStatusCode.MethodNotAllowed);
       return response;
